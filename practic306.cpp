@@ -6,6 +6,7 @@ void security() {
 
 	int age;
 
+
 	std::cout << "Нам нужно узнать ваш возраст!\n";
 	std::cin >> age;
 

@@ -25,6 +25,7 @@ void security() {
 
 }
 
+
 void randomnumber() {
 	
 	int x;
@@ -60,14 +61,49 @@ void randomnumber() {
 
 }
 
+void stringi() {
+	srand(time(NULL));
+
+	std::string user;
+	int rounds;
+	int i = 0;
+	std::string words[3]{ "rock", "scissors", "paper" };
+
+	std::cout << "Введите количество раундов.\n";
+	std::cin >> rounds;
+
+	while (i != rounds) {
+
+		std::string comp = words[rand() % 3];
+		std::cout << comp;
+
+		std::cout << "Чем будете атаковать?\n";
+		std::cin >> user;
+
+
+		if ((user == words[0] && comp == words[2]) || (user == words[1] && comp == words[0]) || (user == words[2] && comp == words[1])) {
+			std::cout << "Вы проиграли...\n";
+			
+		}
+
+		else if ((user == words[2] && comp == words[0]) || (user == words[0] && comp == words[1]) || (user == words[1] && comp == words[2])) {
+			std::cout << "Вы выиграли!\n";
+		}
+		else
+		{
+			std::cout << "Ничья!";
+		}
+		i++;
+	}
+}
 
 int main() {
 	srand(time(0));
 	setlocale(LC_ALL, "Russian");
 
 	//security();
-	randomnumber();
-
+	//randomnumber();
+	stringi();
 }
 
 

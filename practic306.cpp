@@ -140,6 +140,51 @@ void massive() {
 		}
 	}
 
+void zadacha1() {
+
+	/*int Array[10] = {};
+	int lowerLimit = 7;
+	int upperLimit = 14;
+
+	srand(time(NULL));
+	for (int i = 0; i > 10; i++) {
+		Array[i] = lowerLimit + rand() % (upperLimit - lowerLimit + 1);
+		std::cout << Array[i] << " | \n";
+ 	}
+
+	for (int i = 0; i < 10; i++) {
+		if (Array[i] >= 10) {
+			Array[i] -= 10;
+		}
+		std::cout << Array[i] << " | \n";
+	}*/
+
+	int ourArr[10] = {};
+	const int lowerLimit = 7;
+	const int upperLimit = 14;
+
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++) 
+	{
+		ourArr[i] = lowerLimit + rand() % (upperLimit - lowerLimit + 1);
+		std::cout << ourArr[i] << " | ";
+	}
+
+	std::cout << "\n";
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (ourArr[i] >= 10)
+		{
+			ourArr[i] -= 10;
+		}
+		std::cout << ourArr[i] << " | ";
+	}
+	std::cout << "\n";
+	
+
+	}
+
 	int main() {
 		srand(time(0));
 		setlocale(LC_ALL, "Russian");
@@ -147,7 +192,8 @@ void massive() {
 		//security();
 		//randomnumber();
 		//stringi();
-		massive();
+		//massive();
+		zadacha1();
 	}
 
 

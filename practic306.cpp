@@ -1,5 +1,8 @@
 ﻿#include <iostream>
 #include <math.h>
+#include <iomanip>
+
+using namespace std;
 
 //охранник клуба условие возраст подходит не подходит  меньше 18 
 
@@ -139,15 +142,79 @@ void massive() {
 
 		}
 	}
+	
+void magazine() {
+	cout << setiosflags(ios::left);
+	srand(time(NULL));
+
+	std::string vegetables[5]{ "carrot", "totato", "cucumber", "eggplant", "corn" };
+	int price[5]{ 70, 90, 80, 170, 230 };
+	int quanity[5]{ 3, 5, 18, 32, 4 };
+
+	int cash = 500 + rand() % 1000;
+
+	std::cout << "Сегодня у вас в кошеле — " << cash << " рублей\n";
+	std::cout << "Приветствуем в нашем бюджетном магазине, у нас есть такие позиции: \n";
+
+	/*std::cout << setw(10) << "Name" << setw(15) << "Cout " << setw(5) << "Price\n";*/
+		
+	for (int i = 0; i < 5; i++) {
+		std::cout << setw(10) << vegetables[i] << " \t" <<setw(10)  << price[i] << " \t" << quanity[i] << endl;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*std::cout << "Vegetables: ";
+	for (int i = 0; i < 5; i++) {
+			std::cout << "| " << vegetables[i] << " | ";
+			}
+	std::cout << "\n";
+	std::cout << "Quanity:    ";
+	for (int j = 0; j < 5; j++) {
+			std::cout << "|    " << quanity[j] << "   | ";
+		}
+	std::cout << "\n";
+	std::cout << "Price:      ";
+	for (int q = 0; q < 5; q++) {
+			std::cout << "|   " << price[q] << "   | ";
+	}
+	std::cout << "\n";*/
+
+
+	
+
+	}
+
+	
+
+
+
 
 	int main() {
+		
 		srand(time(0));
 		setlocale(LC_ALL, "Russian");
 
 		//security();
 		//randomnumber();
 		//stringi();
-		massive();
-	}
+		//massive();
+		magazine();
+	}	
 
-
+	

@@ -3,8 +3,44 @@
 #include <math.h>
 #include <iomanip>
 #include <sstream>
+#include <vector>
 
 using namespace std;
+
+struct product {
+    string name;
+    int price;
+    int quanity;
+
+    void text() {
+
+        cout << name << endl;
+
+    }
+};
+
+
+void shop() {
+    product shoppp[2]{ {"Tom", 200, 5}, {"Aboba", 500, 1}};
+    vector<product> shop;
+    
+    //cout << shoppp[1].price;
+
+    //shoppp[1].text();
+
+    shop.push_back({ "Apple", 150, 30 });
+    shop.push_back({ "Chezze", 350, 2 });
+    shop.push_back({ "Meat", 600, 5 });
+
+    for (int i = 0; i < shop.size(); i++) {
+
+        cout << shop[i].name << endl;
+
+
+    }
+
+}
+//написать магазин с векторами, почитать структуры, контейнера, операции с векторами 
 
 void magazine() {
     std::cout << setiosflags(ios::left);
@@ -169,11 +205,16 @@ void test() {
 }
 
 
+
+
+
+
 int main() {
 
     srand(time(0));
     setlocale(LC_ALL, "Russian");
 
-    magazine();
+    //magazine();
     //test();
+    shop();
 }

@@ -4,8 +4,11 @@
 #include <iomanip>
 #include <sstream>
 #include <vector>
+#include <string>
 
 using namespace std;
+
+enum charecter{Tom, Lucie, Jim, Margo};
 
 struct product {
     string name;
@@ -19,6 +22,17 @@ struct product {
     }
 };
 
+struct human {
+    string name; // конст
+    int cash; // конст
+    string preferences; // по приходу в магазин
+    int quanity1; // по приходу в магазин
+
+    void text() { //метод
+        cout << name << endl;
+    }
+};
+
 
 void shop() {
     product shoppp[2]{ {"Tom", 200, 5}, {"Aboba", 500, 1}};
@@ -28,8 +42,8 @@ void shop() {
 
     //shoppp[1].text();
 
-    shop.push_back({ "Apple", 150, 30 });
-    shop.push_back({ "Chezze", 350, 2 });
+    shop.push_back({ "Apple", 150, 30 }); //0
+    shop.push_back({ "Chezze", 350, 2 }); //1
     shop.push_back({ "Meat", 600, 5 });
 
     for (int i = 0; i < shop.size(); i++) {
@@ -188,6 +202,81 @@ void magazine() {
 }
 
 
+void magaz() {
+
+    //product magaz[5]{ { "Carrot", 100, 6}, {"Cucumber", 70, 8}, {"Eggplant", 150, 5}, {"Corn", 120, 8}, {"Potato", 60, 10} };
+
+    string frstnm;
+    vector<product> magaz; // товары
+    vector<human> human; // люди
+
+    charecter name1 = Tom;
+
+    magaz.push_back({ "Carrot", 100, 6 }); //наличие витрины
+    magaz.push_back({ "Cucumber", 70, 10 });
+    magaz.push_back({ "Eggplant", 80, 12 });
+    magaz.push_back({ "Corn", 120, 9 });
+    magaz.push_back({ "Potato", 50, 20 });
+
+    human.push_back({ "Tom", 1000 }); //деньги и имена людей
+    human.push_back({ "Lucie", 1500 });
+    human.push_back({ "Jim", 700 });
+    human.push_back({ "Margo", 2000 });
+
+    std::cout << setw(10) << "Name:" << "\t" << setw(10) << "Price:" << "\t" << setw(10) << "Quanity:" << endl; // вывод витрины
+
+    for (int i = 0; i < magaz.size(); i++) { // также вывод витрины
+        std::cout << setw(10) <<  magaz[i].name << "\t" << setw(10) << magaz[i].price << "\t" << setw(10) << magaz[i].quanity << endl; // до сюда всё в норме, сверху прописывается енам характер.. думайте..
+        }
+    
+    for (int i = 0; i < human.size(); i++) {
+        std::cout << "Hi, what is your name?" << endl;
+        std::cin >> frstnm; 
+
+        switch (name1) {
+
+            case 0 //????? ничего пока не понятно, надо почитать про свитч кейс, про енамы, проработать структуру программы https://metanit.com/cpp/tutorial/2.17.php
+        }           
+
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //std::cout << magaz[0].name << magaz[1].name << magaz[2].name << magaz[3].name, magaz[4].name;
+
+    //magaz.clear() - чистка вектора;
+}   // наличие товара, проверка количества денег, хватает ли товара на полках, какое максимальное количество товара можем купить за наши деньги, enum, switch-case, вектора, структуры
+    //переработать магазин в структуры, сделать связь предпочтений людей и товара на полках, огреничение денег\количества, чтобы избежать логических ошибок
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void test() {
 
@@ -216,5 +305,6 @@ int main() {
 
     //magazine();
     //test();
-    shop();
+    //shop();
+    magaz();
 }

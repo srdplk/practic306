@@ -1,4 +1,4 @@
-﻿
+
 #include <iostream>
 #include <math.h>
 #include <iomanip>
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-enum charecter{Tom, Lucie, Jim, Margo};
+enum character{Tom, Lucie, Jim, Margo};
 
 struct product {
     string name;
@@ -23,12 +23,12 @@ struct product {
 };
 
 struct human {
-    string name; // конст
-    int cash; // конст
-    string preferences; // по приходу в магазин
-    int quanity1; // по приходу в магазин
+    string name; // ?????
+    int cash; // ?????
+    string preferences; // ?? ??????? ? ???????
+    int quanity1; // ?? ??????? ? ???????
 
-    void text() { //метод
+    void text() { //?????
         cout << name << endl;
     }
 };
@@ -54,7 +54,7 @@ void shop() {
     }
 
 }
-//написать магазин с векторами, почитать структуры, контейнера, операции с векторами 
+//???????? ??????? ? ?????????, ???????? ?????????, ??????????, ???????? ? ????????? 
 
 void magazine() {
     std::cout << setiosflags(ios::left);
@@ -66,8 +66,8 @@ void magazine() {
 
     int cash = 500 + rand() % 1000;
 
-    std::cout << "Сегодня у вас в кошеле — " << cash << " рублей\n";
-    std::cout << "Приветствуем в нашем бюджетном магазине, у нас есть такие позиции: \n";
+    std::cout << "??????? ? ??? ? ?????? ? " << cash << " ??????\n";
+    std::cout << "???????????? ? ????? ????????? ????????, ? ??? ???? ????? ???????: \n";
 
     std::cout << setw(10) << "Name" << setw(15) << "Price " << setw(5) << "Cout\n";
 
@@ -78,7 +78,7 @@ void magazine() {
         for (int i = 0; i < 5; i++) {
             std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
         }
-        std::cout << "Что вы хотите купить? Сейчас у вас " << cash << " рублей.\n";
+        std::cout << "??? ?? ?????? ??????? ?????? ? ??? " << cash << " ??????.\n";
         std::cin >> vega;
 
         for (int i = 0; i < size(vegetables); i++) {
@@ -114,15 +114,15 @@ void magazine() {
     string inventory;
     int quan;
     int q;
-    std::cout << "Сколько пунктов товара вы хотите приобрести?\n";
+    std::cout << "??????? ??????? ?????? ?? ?????? ???????????\n";
     std::cin >> q;
 
     for (int i = 0; i < q; i++) {
 
-        std::cout << "Чтобы купить определенное количество товара, введите название и количество!\n";
+        std::cout << "????? ?????? ???????????? ?????????? ??????, ??????? ???????? ? ??????????!\n";
         std::cin >> name;
         std::cin >> quan;
-        inventory = inventory + " " + name + " " + std::to_string(quan) + "шт";
+        inventory = inventory + " " + name + " " + std::to_string(quan) + "??";
 
         if (name == vegetables[0] && quan <= quanity[0] && cash >= (price[0] * quan)) {
             cash = cash - (price[0] * quan);
@@ -130,7 +130,7 @@ void magazine() {
             for (int i = 0; i < 5; i++) {
                 std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
             }
-            std::cout << "Вы купили " << name << ", в количестве " << quan << "шт. " << "денег осталось = " << cash << "руб.\n";
+            std::cout << "?? ?????? " << name << ", ? ?????????? " << quan << "??. " << "????? ???????? = " << cash << "???.\n";
         }
         else if (name == vegetables[1] && quan <= quanity[1] && cash >= (price[1] * quan)) {
             cash = cash - (price[1] * quan);
@@ -138,7 +138,7 @@ void magazine() {
             for (int i = 0; i < 5; i++) {
                 std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
             }
-            std::cout << "Вы купили " << name << ", в количестве " << quan << "шт. " << "денег осталось = " << cash << "руб.\n";
+            std::cout << "?? ?????? " << name << ", ? ?????????? " << quan << "??. " << "????? ???????? = " << cash << "???.\n";
         }
         else if (name == vegetables[2] && quan <= quanity[2] && cash >= (price[2] * quan)) {
             cash = cash - (price[2] * quan);
@@ -146,7 +146,7 @@ void magazine() {
             for (int i = 0; i < 5; i++) {
                 std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
             }
-            std::cout << "Вы купили " << name << ", в количестве " << quan << "шт. " << "денег осталось = " << cash << "руб.\n";
+            std::cout << "?? ?????? " << name << ", ? ?????????? " << quan << "??. " << "????? ???????? = " << cash << "???.\n";
         }
         else if (name == vegetables[3] && quan <= quanity[3] && cash >= (price[3] * quan)) {
             cash = cash - (price[3] * quan);
@@ -154,7 +154,7 @@ void magazine() {
             for (int i = 0; i < 5; i++) {
                 std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
             }
-            std::cout << "Вы купили " << name << ", в количестве " << quan << "шт. " << "денег осталось = " << cash << "руб.\n";
+            std::cout << "?? ?????? " << name << ", ? ?????????? " << quan << "??. " << "????? ???????? = " << cash << "???.\n";
         }
         else if (name == vegetables[4] && quan <= quanity[4] && cash >= (price[4] * quan)) {
             cash = cash - (price[4] * quan);
@@ -162,13 +162,13 @@ void magazine() {
             for (int i = 0; i < 5; i++) {
                 std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
             }
-            std::cout << "Вы купили " << name << ", в количестве " << quan << "шт. " << "денег осталось = " << cash << "руб.\n";
+            std::cout << "?? ?????? " << name << ", ? ?????????? " << quan << "??. " << "????? ???????? = " << cash << "???.\n";
         }
         else {
-            std::cout << "Вам не хватает денег. Или же нет столько товара в магазине.\n";
+            std::cout << "??? ?? ??????? ?????. ??? ?? ??? ??????? ?????? ? ????????.\n";
         }
     }
-    std::cout << "У вас с собой в пакете: " << inventory;*/
+    std::cout << "? ??? ? ????? ? ??????: " << inventory;*/
 
 
 
@@ -177,7 +177,7 @@ void magazine() {
 
 
     //aboba
-    /*std::cout << "Осталось в наличии: \n";*/
+    /*std::cout << "???????? ? ???????: \n";*/
 
     /*for (int i = 0; i < 5; i++) {
      std::cout << setw(10) << vegetables[i] << " \t" << setw(10) << price[i] << " \t" << quanity[i] << endl;
@@ -206,43 +206,76 @@ void magaz() {
 
     //product magaz[5]{ { "Carrot", 100, 6}, {"Cucumber", 70, 8}, {"Eggplant", 150, 5}, {"Corn", 120, 8}, {"Potato", 60, 10} };
 
-    string frstnm;
-    vector<product> magaz; // товары
-    vector<human> human; // люди
+    string tovar;
+    int quanityq = 0;
+    int choice;
+    vector<product> magaz; // ??????
+    vector<human> human; // ????
 
-    charecter name1 = Tom;
-
-    magaz.push_back({ "Carrot", 100, 6 }); //наличие витрины
+    magaz.push_back({ "Carrot", 100, 6 }); //??????? ???????
     magaz.push_back({ "Cucumber", 70, 10 });
     magaz.push_back({ "Eggplant", 80, 12 });
     magaz.push_back({ "Corn", 120, 9 });
     magaz.push_back({ "Potato", 50, 20 });
 
-    human.push_back({ "Tom", 1000 }); //деньги и имена людей
+    human.push_back({ "Tom", 1000 }); //?????? ? ????? ?????
     human.push_back({ "Lucie", 1500 });
     human.push_back({ "Jim", 700 });
     human.push_back({ "Margo", 2000 });
 
-    std::cout << setw(10) << "Name:" << "\t" << setw(10) << "Price:" << "\t" << setw(10) << "Quanity:" << endl; // вывод витрины
+    std::cout << setw(10) << "Name:" << "\t" << setw(10) << "Price:" << "\t" << setw(10) << "Quanity:" << endl; // ????? ???????
 
-    for (int i = 0; i < magaz.size(); i++) { // также вывод витрины
-        std::cout << setw(10) <<  magaz[i].name << "\t" << setw(10) << magaz[i].price << "\t" << setw(10) << magaz[i].quanity << endl; // до сюда всё в норме, сверху прописывается енам характер.. думайте..
+    for (int i = 0; i < magaz.size(); i++) { // ????? ????? ???????
+        std::cout << setw(10) <<  magaz[i].name << "\t" << setw(10) << magaz[i].price << "\t" << setw(10) << magaz[i].quanity << endl; // ?? ???? ??? ? ?????, ?????? ????????????? ???? ????????.. ???????..
         }
     
-    for (int i = 0; i < human.size(); i++) {
-        std::cout << "Hi, what is your name?" << endl;
-        std::cin >> frstnm; 
 
-        switch (name1) {
+        while (human[0].cash >= 50) {
+            /*for (int j = 0; j < magaz.size(); j++) {*/
+            
+            std::cout << "Enter shelf number!\t";
+            std::cin >> choice;
 
-            case 0 //????? ничего пока не понятно, надо почитать про свитч кейс, про енамы, проработать структуру программы https://metanit.com/cpp/tutorial/2.17.php
-        }           
+                std::cout << "Hello. What would you like to buy?\t" << "Do you have money: " << human[0].cash << "\t";
+                std::cin >> tovar;
 
-    }
+                    std::cout << "In what quanity?\t";
+                    std::cin >> quanityq;
+
+                    if (tovar == magaz[choice - 1].name && quanityq <= magaz[choice].quanity) {
+                        
+                            human[0].cash -= (quanityq * magaz[choice - 1].price);
+                            magaz[choice - 1].quanity -= quanityq;
+
+                            std::cout << "Do you have money: " << human[0].cash << "\t" << endl;
+
+                            for (int q = 0; q < magaz.size(); q++) { // ????? ????? ???????
+                                std::cout << setw(10) << magaz[q].name << "\t" << setw(10) << magaz[q].price << "\t" << setw(10) << magaz[q].quanity << endl;
+                            }
+                        }
+                    }
+                }
+            //}
+       
+    //?????????? ???? ???? ??????, ??????, ?????
+
     
     
+    
 
 
+    /*for (int i = 0; i < magaz.size(); i++) {
+        while (human[i].cash > 50) {
+            std::cout << "Hello. What would you like to buy?\t" << "Do you have money: " << human[i].cash << "\t";
+            std::cin >> tovar;
+            std::cout << "In what quantity?\t";
+            std::cin >> quanityq;
+            if (tovar == magaz[i].name) {
+                human[i].cash = human[i].cash - (quanityq * magaz[i].price);
+                std::cout << human[i].cash;
+            }
+        }
+    }*/
 
 
 
@@ -256,9 +289,9 @@ void magaz() {
 
     //std::cout << magaz[0].name << magaz[1].name << magaz[2].name << magaz[3].name, magaz[4].name;
 
-    //magaz.clear() - чистка вектора;
-}   // наличие товара, проверка количества денег, хватает ли товара на полках, какое максимальное количество товара можем купить за наши деньги, enum, switch-case, вектора, структуры
-    //переработать магазин в структуры, сделать связь предпочтений людей и товара на полках, огреничение денег\количества, чтобы избежать логических ошибок
+    //magaz.clear() - ?????? ???????;
+    // ??????? ??????, ???????? ?????????? ?????, ??????? ?? ?????? ?? ??????, ????? ???????????? ?????????? ?????? ????? ?????? ?? ???? ??????, enum, switch-case, ???????, ?????????
+    //???????????? ??????? ? ?????????, ??????? ????? ???????????? ????? ? ?????? ?? ??????, ??????????? ?????\??????????, ????? ???????? ?????????? ??????
 
 
 
@@ -286,8 +319,8 @@ void test() {
 
     for (int i = 0; i < size(quanity); i++) {
         if (quanity[i] == 4774) {
-            // std::cout << "Число меньше 10 = " << quanity[i] << endl;
-            std::cout << i << "элементе массива";
+            // std::cout << "????? ?????? 10 = " << quanity[i] << endl;
+            std::cout << i << "???????? ???????";
         }
     }
 

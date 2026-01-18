@@ -14,6 +14,7 @@ struct product {
     string name;
     int price;
     int quanity;
+    int number;
 
     void text() {
 
@@ -25,8 +26,7 @@ struct product {
 struct human {
     string name; // конст
     int cash; // конст
-    string preferences; // по приходу в магазин
-    int quanity1; // по приходу в магазин
+   
 
     void text() { //метод
         cout << name << endl;
@@ -96,19 +96,6 @@ void magazine() {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*string name;
     string inventory;
@@ -212,70 +199,73 @@ void magaz() {
 
     charecter name1 = Tom;
 
-    magaz.push_back({ "Carrot", 100, 6 }); //наличие витрины
-    magaz.push_back({ "Cucumber", 70, 10 });
-    magaz.push_back({ "Eggplant", 80, 12 });
-    magaz.push_back({ "Corn", 120, 9 });
-    magaz.push_back({ "Potato", 50, 20 });
+    magaz.push_back({ "Carrot", 100, 6, 1 }); //наличие витрины
+    magaz.push_back({ "Cucumber", 70, 10, 2 });
+    magaz.push_back({ "Eggplant", 80, 12, 3 });
+    magaz.push_back({ "Corn", 120, 9, 4 });
+    magaz.push_back({ "Potato", 50, 20, 5 });
 
     human.push_back({ "Tom", 1000 }); //деньги и имена людей
     human.push_back({ "Lucie", 1500 });
-    human.push_back({ "Jim", 700 });
+    human.push_back({ "Jim", 1700 });
     human.push_back({ "Margo", 2000 });
 
-    std::cout << setw(10) << "Name:" << "\t" << setw(10) << "Price:" << "\t" << setw(10) << "Quanity:" << endl; // вывод витрины
+   
+    int num = 0;
+    string preferences; // по приходу в магазин
+    int quanity1; // по приходу в магазин
 
-    for (int i = 0; i < magaz.size(); i++) { // также вывод витрины
-        std::cout << setw(10) <<  magaz[i].name << "\t" << setw(10) << magaz[i].price << "\t" << setw(10) << magaz[i].quanity << endl; // до сюда всё в норме, сверху прописывается енам характер.. думайте..
+
+    while ( human[0].cash >= 50 ) {
+
+        std::cout << "Number:" << "\t" << setw(10) << "Name:" << "\t" << setw(10) << "Price:" << "\t" << setw(10) << "Quanity:" << endl; // вывод витрины
+
+        for (int i = 0; i < magaz.size(); i++) { // также вывод витрины
+            std::cout << setw(3) << magaz[i].number << "\t" << setw(10) << magaz[i].name << "\t" << setw(10) << magaz[i].price << "\t" << setw(10) << magaz[i].quanity << endl; // до сюда всё в норме, сверху прописывается енам характер.. думайте..
         }
-    
-    for (int i = 0; i < human.size(); i++) {
-        std::cout << "Hi, what is your name?" << endl;
-        std::cin >> frstnm; 
 
-        switch (name1) {
+        cout << "Введите номер полки! " << endl;
+        cin >> num;
+        cout << "Введите название желаемого товара на этой полке! " << endl;
+        cin >> preferences;
 
-            case 0 //????? ничего пока не понятно, надо почитать про свитч кейс, про енамы, проработать структуру программы https://metanit.com/cpp/tutorial/2.17.php
-        }           
+        if (preferences == magaz[num - 1].name) {
+            cout << "Введите сколько товара хотите купить! " << endl;
+            cin >> quanity1;
 
+            if (quanity1 <= magaz[num - 1].quanity) {
+
+                if (human[0].cash >= quanity1 * magaz[num - 1].price) {
+                    human[0].cash -= quanity1 * magaz[num - 1].price;
+
+                    cout << "Денег осталось: " << human[0].cash << endl;
+                    magaz[num - 1].quanity -= quanity1;
+                }
+                else {
+                    cout << "Чэл ты гонишь где весь твой кэш? Иди домоой." << endl;
+                }
+            }
+            else { 
+                cout << "У нас нет столько товара в магазине. Иди домой!" << endl; 
+            }
+        }
+        else {
+            cout << "У нас нет " << preferences << " может это есть у тебя дома?" << endl;
+        }
+       
     }
-    
-    
+   
 
+}
 
-
-
-
-
-
-
-
-
-
-
+            //????? ничего пока не понятно, надо почитать про свитч кейс, про енамы, проработать структуру программы https://metanit.com/cpp/tutorial/2.17.php
+                  
 
     //std::cout << magaz[0].name << magaz[1].name << magaz[2].name << magaz[3].name, magaz[4].name;
 
     //magaz.clear() - чистка вектора;
-}   // наличие товара, проверка количества денег, хватает ли товара на полках, какое максимальное количество товара можем купить за наши деньги, enum, switch-case, вектора, структуры
+   // наличие товара, проверка количества денег, хватает ли товара на полках, какое максимальное количество товара можем купить за наши деньги, enum, switch-case, вектора, структуры
     //переработать магазин в структуры, сделать связь предпочтений людей и товара на полках, огреничение денег\количества, чтобы избежать логических ошибок
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 void test() {
@@ -295,7 +285,9 @@ void test() {
 
 
 
+void advanced() {
 
+}
 
 
 int main() {
@@ -306,5 +298,6 @@ int main() {
     //magazine();
     //test();
     //shop();
-    magaz();
+    //magaz();
+    advanced();
 }

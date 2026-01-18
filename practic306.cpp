@@ -8,7 +8,7 @@
 
 using namespace std;
 
-enum charecter{Tom, Lucie, Jim, Margo};
+enum character{Tom, Lucie, Jim, Margo};
 
 struct product {
     string name;
@@ -205,7 +205,7 @@ void magaz() {
     magaz.push_back({ "Corn", 120, 9, 4 });
     magaz.push_back({ "Potato", 50, 20, 5 });
 
-    human.push_back({ "Tom", 1000 }); //деньги и имена людей
+    human.push_back({ "Tom", 1000 }); //?????? ? ????? ?????
     human.push_back({ "Lucie", 1500 });
     human.push_back({ "Jim", 1700 });
     human.push_back({ "Margo", 2000 });

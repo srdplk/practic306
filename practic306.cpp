@@ -33,6 +33,27 @@ struct human {
     }
 };
 
+struct location {
+    string name_loc;
+    string desk_loc;
+    unsigned int number_loc;
+
+    void text() { //метод
+        cout << name_loc << endl;
+    }
+};
+
+    struct person {
+        string name_perc;
+        short int cash_perc;
+        //short int dmg_perc;
+        //short int hp_perc;
+        short int current_loc_perc;
+
+        void text() { //метод
+            cout << name_perc << endl;
+        }
+    };
 
 void shop() {
     product shoppp[2]{ {"Tom", 200, 5}, {"Aboba", 500, 1}};
@@ -197,7 +218,7 @@ void magaz() {
     vector<product> magaz; // товары
     vector<human> human; // люди
 
-    charecter name1 = Tom;
+    character name1 = Tom;
 
     magaz.push_back({ "Carrot", 100, 6, 1 }); //наличие витрины
     magaz.push_back({ "Cucumber", 70, 10, 2 });
@@ -287,6 +308,37 @@ void test() {
 
 void advanced() {
 
+    short int marker = 0;
+
+    person whois[1]{ { "Mikhail", 20, 0} };
+
+    location dormitory[6]{ { "0. My Room", "This place reeks of hopelessness, alcohol, and dirty socks. Every second spent here only deepens your depression.\nYou just want to escape. Any longer and you'll be physically dying in this seedy place.\nYou need to leave as soon as possible.\n\n", 0 },
+        { "1. Ha(e)llway", "Now we find ourselves at the intersection of good and evil, darkness and light, feces and urine, and so on.\nThis is where all paths begin.\nThe place seems rather unremarkable at first glance, but...\nThere's been all sorts of things here. Drunken fights, food fights, fights just for the sake of fighting,fights over girls.\nPossible paths : 0 - My room; 2 - Neighbors - men; 3 - Place of discord(Kitchen); 5 - Place of relaxation(Balcony);\n\n", 1},
+        { "2. Neighbors-mens", "You can only go to this place when it's quiet. Because these idiots are always drinking.\nAnd if you come here at the wrong moment, you might stumble upon something you'd rather not see, otherwise you might get beat up.\nAnd when it's quiet, it means they're hungover, which is probably the only chance you have to beat them up or help them out.\nAnd maybe even make friends ?\n\n", 2},
+        { "3. Kitchen", "The sanctuary of the entire dorm floor. All our food is stored and prepared here. Littering is prohibited. Stealing is prohibited. Basically, there's total control here, and it's maintained by girls... or women? It's hard to tell how old they are, and even our male neighbors wouldn't dare ask such a tactless question. You could get beat up here so badly your own mother wouldn't recognize you. So everything has to be done carefully, even though the quality of the equipment leaves much to be desired.\n\n", 3 },
+        { "4. Women... Or monsters?", "This room can only be seen during these individuals' ovulation period. On other days, don't venture in—they'll eat you alive. These are the kitchen guardians you can't pass unnoticed. They always want something from you if you catch their eye, so it's best not to frequent the (Kitchen) location.There's always a chance you'll spend hours dabbling in useless nonsense or listening to terrifying nonsense about hair tonic, menstrual cycle, or another (ex) who might even be my neighbor.\n\n", 4 },
+        { "5. Balcony", "It smells so fresh here... If you ignore the couple of ashtrays full of cigarette butts. The beautiful view of the apartment buildings leaves no chance not to ponder the future and cry, thinking about the past. How did I end up like this? — this is the only question that torments me every time I come out here for a smoke. For some reason, this place is always empty, and every time I come here, I feel utter loneliness and a black darkness in my soul. It's a shame the height isn't high enough... No matter. We've had our smoke and that's enough; it's time to go back to my daily routine.\n\n", 5} };
+
+    cout << "Well, good morning to me. The day is off to a shitty start as usual, I need to get to the kitchen and have breakfast." << endl << endl;
+    cout << setw (60) << dormitory->name_loc << endl << "\n" << dormitory->desk_loc << "\n\n";
+    cout << setw (65) << "Where can I go?\n\n" << setw(62) << dormitory[1].name_loc << "\n\n";
+    
+    cin >> marker; 
+
+    if (marker == whois[0].current_loc_perc) {
+        cout << "You are already here!\n\n";
+    }
+    else {
+    
+       if (marker == dormitory[1].number_loc) {
+           whois[0].current_loc_perc = marker;
+           cout << setw(62) << dormitory[1].name_loc << "\n\n" << dormitory[1].desk_loc;
+       }
+    }
+    
+
+
+        
 }
 
 
@@ -300,4 +352,5 @@ int main() {
     //shop();
     //magaz();
     advanced();
+
 }
